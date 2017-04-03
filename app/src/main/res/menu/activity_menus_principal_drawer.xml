@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_productos"
+            android:icon="@drawable/productos_img1"
+            android:title="Productos" />
+        <item
+            android:id="@+id/nav_compras"
+            android:icon="@drawable/carrito_img1"
+            android:title="Comprar" />
+        <item
+            android:id="@+id/nav_slideshow"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Mis compras" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/usuario_img1"
+            android:title="Información de usuario" />
+    </group>
+
+    <item android:title="Opciones">
+        <menu>
+            <item
+                android:id="@+id/nav_salir"
+                android:icon="@drawable/salir_img1"
+                android:title="Salir" />
+            <item
+                android:id="@+id/nav_ayuda"
+                android:icon="@drawable/ayuda_img1"
+                android:title="Ayuda" />
+        </menu>
+    </item>
+
+</menu>
