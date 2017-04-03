@@ -12,11 +12,11 @@
             android:icon="@drawable/carrito_img1"
             android:title="Comprar" />
         <item
-            android:id="@+id/nav_slideshow"
+            android:id="@+id/nav_miscompras"
             android:icon="@drawable/miscompras_img1"
             android:title="Mis compras" />
         <item
-            android:id="@+id/nav_manage"
+            android:id="@+id/nav_user"
             android:icon="@drawable/usuario_img1"
             android:title="Información de usuario" />
     </group>

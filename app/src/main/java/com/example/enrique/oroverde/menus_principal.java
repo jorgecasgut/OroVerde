@@ -82,15 +82,15 @@ public class menus_principal extends AppCompatActivity
 
         if (id == R.id.nav_productos) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_compras) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_miscompras) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_user) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_salir) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.nav_ayuda) {
 
         }
 

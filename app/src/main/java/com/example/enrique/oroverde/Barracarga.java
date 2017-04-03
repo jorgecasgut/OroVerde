@@ -61,7 +61,7 @@ public class Barracarga extends AppCompatActivity {
 
             Toast.makeText(getBaseContext(), "Tarea Finalizada", Toast.LENGTH_LONG).show();//Nos muestra una notificaci�n informando de que la tarea en segundo plano ha finalizado
             // ENVIA Al otro activity
-            Intent intent = new Intent(Barracarga.this, Menu_principal.class);
+            Intent intent = new Intent(Barracarga.this, menus_principal.class);
             startActivity(intent);
             finish();
         }
