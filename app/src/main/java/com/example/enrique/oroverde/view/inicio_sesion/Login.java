@@ -1,4 +1,4 @@
-package com.example.enrique.oroverde;
+package com.example.enrique.oroverde.view.inicio_sesion;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -8,6 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.enrique.oroverde.Barracarga;
+import com.example.enrique.oroverde.R;
 
 import org.json.JSONArray;
 import org.json.JSONObject;

@@ -10,6 +10,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.enrique.oroverde.view.menu.menus_principal;
+
 public class Barracarga extends AppCompatActivity {
 
     int progreso;//Guardar� un numero entero que ser� el numero de segundos que ha pasado desde que hemos inicializado la aplicaci�n.

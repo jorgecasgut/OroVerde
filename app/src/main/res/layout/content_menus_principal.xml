@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.enrique.oroverde.menus_principal"
+    tools:context="com.example.enrique.oroverde.view.menu.menus_principal"
     tools:showIn="@layout/app_bar_menus_principal">
 
 </RelativeLayout>
