@@ -74,6 +74,7 @@ public class menus_principal extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_productos) {
+
             ProductosFragment homeFragment = new ProductosFragment();
             getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment)
                     .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
