@@ -13,7 +13,7 @@
             android:title="Comprar" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/miscompras_img1"
             android:title="Mis compras" />
         <item
             android:id="@+id/nav_manage"
