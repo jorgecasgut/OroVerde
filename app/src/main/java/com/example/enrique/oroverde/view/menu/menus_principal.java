@@ -1,11 +1,14 @@
 package com.example.enrique.oroverde.view.menu;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
@@ -13,6 +16,7 @@ import android.view.MenuItem;
 
 import com.example.enrique.oroverde.R;
 import com.example.enrique.oroverde.view.fragment.Productos.ProductosFragment;
+import com.example.enrique.oroverde.view.inicio_sesion.Login;
 
 public class menus_principal extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -81,16 +85,36 @@ public class menus_principal extends AppCompatActivity
                     .addToBackStack(null).commit();
 
         } else if (id == R.id.nav_compras) {
-            ProductosFragment homeFragment = new ProductosFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.container, homeFragment)
-                    .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
-                    .addToBackStack(null).commit();
+
 
         } else if (id == R.id.nav_miscompras) {
 
         } else if (id == R.id.nav_user) {
 
         } else if (id == R.id.nav_salir) {
+
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("¿Desea Salir?")
+                    .setTitle("Advertencia")
+                    .setCancelable(false)
+                    .setPositiveButton("Si",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    // metodo que se debe implementar
+                                    //envia al otro activity login
+                                    Intent intent = new Intent(menus_principal.this, Login.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            })
+                    .setNegativeButton("No",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.cancel();
+                                }
+                            });
+            AlertDialog alert = builder.create();
+            alert.show();
 
         } else if (id == R.id.nav_ayuda) {
 
