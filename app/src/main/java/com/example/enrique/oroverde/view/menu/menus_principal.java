@@ -101,7 +101,7 @@ public class menus_principal extends AppCompatActivity
                             new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int id) {
                                     // metodo que se debe implementar
-                                    //envia al otro activity login
+                                    //envia al otro activity
                                     Intent intent = new Intent(menus_principal.this, Login.class);
                                     startActivity(intent);
                                     finish();
