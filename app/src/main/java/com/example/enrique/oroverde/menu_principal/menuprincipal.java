@@ -66,6 +66,7 @@ public class menuprincipal extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                //envia al otro activity "listaproductos"
                 Intent i = new Intent(menuprincipal.this, listaproductos.class);
                 startActivity(i);
                 finish();

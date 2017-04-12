@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 
 public class ListViewAdapter extends BaseAdapter {
+
     private ArrayList<Item> ArrayListItem;
     private Context context;
     private LayoutInflater layoutInflater;
@@ -52,9 +53,11 @@ public class ListViewAdapter extends BaseAdapter {
         TextView tvTexto = (TextView) vistaItem.findViewById(R.id.tvTitulo);
         TextView tvContenido = (TextView) vistaItem.findViewById(R.id.tvContenido);
 
+        //convierte los bytes a imagenes
         byte[] decodeString = Base64.decode(ArrayListItem.get(i).getImagen(),Base64.DEFAULT);
         Bitmap decoded = BitmapFactory.decodeByteArray(decodeString,0,decodeString.length);
 
+        //agarra los valores para insertarlos en los elementos
         ivImagen.setImageBitmap(decoded);
         tvTexto.setText(ArrayListItem.get(i).getTitulo());
         tvContenido.setText(ArrayListItem.get(i).getContenido());

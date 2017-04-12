@@ -31,14 +31,14 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class listaproductos extends AppCompatActivity {
-
+    //declaraccion de variables
     int cantidad = 3, mostrados = 0;
     String Datos = "";
     String nombre ="";
     String imagen ="";
     Double precio = 0.0;
 
-
+    //Declaracion de los tipos de listas
     ListView ListaElementos = null;
     ArrayList<Item> arrayItem = null;
     ListAdapter adapter = null;
@@ -48,11 +48,15 @@ public class listaproductos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_listaproductos);
 
+        //iniciamos las listas en el onCreate
         ListaElementos = (ListView) findViewById(R.id.listNombres);
         arrayItem= new ArrayList<>();
         ListaElementos.setAdapter(adapter);
+
+        //metodo que muestra los datos
         mostrarDatos();
 
+        //metodo de la lista para seleccionar un Item
         ListaElementos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -73,6 +77,8 @@ public class listaproductos extends AppCompatActivity {
         String strAccion = "listarpf";
         String strUrl = "http://wshenequen.azurewebsites.net/UI/WebService.asmx/";
         String UrlWebService = strUrl + strAccion;
+
+        //iniciacion del metodo para traer los datos del web service
         new JSONTask().execute(UrlWebService);
     }
 
@@ -89,8 +95,7 @@ public class listaproductos extends AppCompatActivity {
                 precio = object.getDouble("Precio_venta");
                 imagen = object.getString("Imagen");
 
-
-
+                //Agrega los valores a un arrarlist
                 arrayItem.add(new Item(nombre, precio.toString(), imagen));
             }
         }
@@ -98,6 +103,7 @@ public class listaproductos extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        //agrega los items a una lista
         adapter = new ListViewAdapter(listaproductos.this, arrayItem);
         ListaElementos.setAdapter(adapter);
     }
@@ -144,6 +150,7 @@ public class listaproductos extends AppCompatActivity {
             super.onPostExecute(Resultado);
 
             try {
+
                 Datos = Resultado;
                 mostrarDatos();
 

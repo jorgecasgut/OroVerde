@@ -4,6 +4,7 @@ package com.example.enrique.oroverde.clases;
  * Created by enrique on 12/04/2017.
  */
 
+//clase que guarda los items
 public class Item {
 
     private String imagen;
