@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import com.example.enrique.oroverde.Actividades.listaproductos;
 import com.example.enrique.oroverde.R;
+import com.example.enrique.oroverde.usuario.usuario;
 import com.example.enrique.oroverde.view.inicio_sesion.Login;
 
 public class menuprincipal extends AppCompatActivity {
@@ -69,9 +70,17 @@ public class menuprincipal extends AppCompatActivity {
                 //envia al otro activity "listaproductos"
                 Intent i = new Intent(menuprincipal.this, listaproductos.class);
                 startActivity(i);
-                finish();
 
 
+            }
+        });
+
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //envia al otro activity "listaproductos"
+                Intent i = new Intent(menuprincipal.this, usuario.class);
+                startActivity(i);
             }
         });
     }

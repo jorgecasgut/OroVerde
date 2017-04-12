@@ -20,7 +20,8 @@
         <activity android:name=".Barracarga" />
         <activity android:name=".menu_principal.menuprincipal" />
         <activity android:name=".Actividades.listaproductos" />
-        <activity android:name=".Actividades.detalle"></activity>
+        <activity android:name=".Actividades.detalle" />
+        <activity android:name=".usuario.usuario"></activity>
     </application>
 
 </manifest>
