@@ -100,6 +100,7 @@ public class Login extends AppCompatActivity {
                 JSONArray ResultadosArray = null;
                 try{
                     int dato = 0;
+
                     ResultadosArray=new JSONArray(Resultado);
                     for(int i = 0; i < ResultadosArray.length(); i++) {
                         JSONObject objetos = ResultadosArray.getJSONObject(i);

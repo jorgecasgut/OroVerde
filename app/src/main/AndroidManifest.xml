@@ -18,10 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Barracarga" />
-        <activity
-            android:name=".view.menu.menus_principal"
-            android:label="@string/title_activity_menus_principal"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".menu_principal.menuprincipal" />
+        <activity android:name=".Actividades.listaproductos" />
+        <activity android:name=".Actividades.detalle"></activity>
     </application>
 
 </manifest>
