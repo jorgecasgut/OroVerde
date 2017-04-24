@@ -1,21 +1,18 @@
 package com.example.enrique.oroverde.Actividades;
 
-import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.enrique.oroverde.R;
-import com.example.enrique.oroverde.clases.Item;
-import com.example.enrique.oroverde.clases.ListViewAdapter;
+import com.example.enrique.oroverde.clases.Item2;
+import com.example.enrique.oroverde.clases.ListViewAdapter2;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -30,77 +27,70 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class listaproductos extends AppCompatActivity {
+public class miscompras extends AppCompatActivity {
 
-    //declaraccion de variables
-    int cantidad = 3, mostrados = 0;
-    String ID_PF = "";
     String Datos = "";
-    String nombre ="";
-    String imagen ="";
-    Double precio = 0.0;
+    String folio = "";
+    String fecha = "";
+    Double total = 0.0;
+
 
     //Declaracion de los tipos de listas
     ListView ListaElementos = null;
-    ArrayList<Item> arrayItem = null;
+    ArrayList<Item2> arrayItem = null;
     ListAdapter adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_listaproductos);
+        setContentView(R.layout.activity_miscompras);
 
         //iniciamos las listas en el onCreate
-        ListaElementos = (ListView) findViewById(R.id.listNombres);
+        ListaElementos = (ListView) findViewById(R.id.listcompras);
         arrayItem= new ArrayList<>();
         ListaElementos.setAdapter(adapter);
 
         //metodo que muestra los datos
-        mostrarDatos();
+        verPreferencias();
 
-        //metodo de la lista para seleccionar un Item
-        ListaElementos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                TextView tit = (TextView) view.findViewById(R.id.tvTitulo);
-                TextView des = (TextView) view.findViewById(R.id.tvContenido);
-                ImageView ima = (ImageView)view.findViewById(R.id.lvImagen);
-                Intent c = new Intent(listaproductos.this, detalle.class);
-                //Recive los datos como el nombre y la descripción.
-                c.putExtra("id_pf", ID_PF);
-                c.putExtra("imagen", arrayItem.get(i).getImagen());
-                c.putExtra("titulo", tit.getText());
-                c.putExtra("descripcion", des.getText());
-                startActivity(c);
-                Toast.makeText(listaproductos.this, "Informacion del producto", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        //acceso al web service
-        String strAccion = "listarpf";
-        String strUrl = "http://wshenequen.azurewebsites.net/UI/WebService.asmx/";
-        String UrlWebService = strUrl + strAccion;
 
-        //iniciacion del metodo para traer los datos del web service
-        new JSONTask().execute(UrlWebService);
+
     }
 
+    private void verPreferencias() {
+        try {
+            SharedPreferences prefs = getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            String cuenta = prefs.getString("nombre", "").toString();
+            Toast.makeText(miscompras.this, cuenta,Toast.LENGTH_LONG).show();
+
+            String strAccion = "ListarCompraMovil";
+            String strURL = "http://wshenequen.azurewebsites.net/UI/WebService.asmx/";
+            String UrlWebService = strURL + strAccion + "?user=" + cuenta;
+
+            new JSONTask().execute(UrlWebService);
+
+
+        }catch (Exception c){
+            //Toast.makeText(this, "Error al cargar los datos", Toast.LENGTH_LONG).show();
+        }
+    }
 
     //metodo para mostrar los datos en una lista
     private void mostrarDatos(){
         JSONArray ResultadosArray = null;
         try {
             ResultadosArray = new JSONArray(Datos);
-            for(int i = mostrados; i < cantidad;i++) {
-                mostrados++;
+
+            for(int i =0; i< 4; i++) {
                 JSONObject object = ResultadosArray.getJSONObject(i);
-                ID_PF = object.getString("ID_PF");
-                nombre = object.getString("Nombre");
-                precio = object.getDouble("Precio_venta");
-                imagen = object.getString("Imagen");
+                folio = object.getString("Folio");
+                fecha = object.getString("Fecha_Compra");
+                total = object.getDouble("Total");
 
                 //Agrega los valores a un arrarlist
-                arrayItem.add(new Item(nombre, precio.toString(), imagen));
+                arrayItem.add(new Item2(folio, fecha, total.toString()));
             }
         }
         catch (JSONException e){
@@ -108,7 +98,7 @@ public class listaproductos extends AppCompatActivity {
         }
 
         //agrega los items a una lista
-        adapter = new ListViewAdapter(listaproductos.this, arrayItem);
+        adapter = new ListViewAdapter2(miscompras.this, arrayItem);
         ListaElementos.setAdapter(adapter);
     }
 
@@ -163,6 +153,5 @@ public class listaproductos extends AppCompatActivity {
             }
         }
     }
-
 
 }

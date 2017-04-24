@@ -1,0 +1,15 @@
+package com.example.enrique.oroverde.Actividades;
+
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+
+import com.example.enrique.oroverde.R;
+
+public class pagare extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_pagare);
+    }
+}

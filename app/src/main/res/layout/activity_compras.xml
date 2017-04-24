@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_compras"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.enrique.oroverde.Actividades.compras">
+
+    <TextView
+        android:text="Confirmar compra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/textView12"
+        android:textSize="24sp"
+        android:textStyle="normal|bold" />
+
+    <TextView
+        android:text="Folio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="19dp"
+        android:id="@+id/textView15" />
+
+    <TextView
+        android:text="Cantidad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbfolio"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="14dp"
+        android:id="@+id/textView18"
+        tools:text="Cantidad" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/cbcantidad"
+        android:layout_below="@+id/textView18"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/cbiva" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView20"
+        android:id="@+id/cbiva"
+        android:layout_alignStart="@+id/textView16" />
+
+    <TextView
+        android:text="ID Producto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbcantidad"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="21dp"
+        android:id="@+id/textView21" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView21"
+        android:layout_alignParentStart="true"
+        android:id="@+id/cbidp"
+        android:layout_alignEnd="@+id/cbcantidad" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView22"
+        android:id="@+id/cbsubt"
+        android:layout_alignStart="@+id/cbiva" />
+
+    <TextView
+        android:text="Usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbidp"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="18dp"
+        android:id="@+id/textView23" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_below="@+id/textView23"
+        android:layout_alignParentStart="true"
+        android:id="@+id/cbuser"
+        android:layout_toStartOf="@+id/textView24" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/cbtotal"
+        android:layout_below="@+id/textView24"
+        android:layout_alignStart="@+id/cbsubt" />
+
+    <Button
+        android:text="Comprar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cbuser"
+        android:layout_marginTop="50dp"
+        android:id="@+id/btncomprartodo"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/cbfecha"
+        android:layout_below="@+id/textView16"
+        android:layout_toEndOf="@+id/cbfolio" />
+
+    <TextView
+        android:text="Fecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView16"
+        android:layout_above="@+id/cbfolio"
+        android:layout_alignEnd="@+id/textView12"
+        android:layout_marginEnd="45dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/cbfolio"
+        android:layout_below="@+id/textView15"
+        android:layout_toStartOf="@+id/textView16" />
+
+    <TextView
+        android:text="Total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView24"
+        android:layout_above="@+id/cbuser"
+        android:layout_alignStart="@+id/cbtotal" />
+
+    <TextView
+        android:text="Subtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView22"
+        android:layout_above="@+id/cbidp"
+        android:layout_toEndOf="@+id/cbidp" />
+
+    <TextView
+        android:text="IVA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView20"
+        android:layout_above="@+id/cbcantidad"
+        android:layout_alignEnd="@+id/textView16"
+        android:layout_toEndOf="@+id/cbcantidad" />
+</RelativeLayout>

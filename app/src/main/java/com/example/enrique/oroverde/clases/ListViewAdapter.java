@@ -30,6 +30,7 @@ public class ListViewAdapter extends BaseAdapter {
         ArrayListItem = arrayListItem;
     }
 
+
     @Override
     public int getCount() {
         return ArrayListItem.size();

@@ -21,7 +21,10 @@
         <activity android:name=".menu_principal.menuprincipal" />
         <activity android:name=".Actividades.listaproductos" />
         <activity android:name=".Actividades.detalle" />
-        <activity android:name=".usuario.usuario"></activity>
+        <activity android:name=".usuario.usuario" />
+        <activity android:name=".Actividades.miscompras" />
+        <activity android:name=".Actividades.compras" />
+        <activity android:name=".Actividades.pagare"></activity>
     </application>
 
 </manifest>
